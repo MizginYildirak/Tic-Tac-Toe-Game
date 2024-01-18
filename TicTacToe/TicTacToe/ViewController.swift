@@ -49,19 +49,41 @@ class ViewController: UIViewController {
             turnLabel.text = currentPlayer
             sender.setTitleColor(UIColor(red: 255/255, green: 108/255, blue: 34/255, alpha: 1), for: .normal)
         }
-       
     }
     
     func checkForWin() {
             // Check for horizontal victory
-            if a1.title(for: .normal) == currentPlayer && a2.title(for: .normal) == currentPlayer && a3.title(for: .normal) == currentPlayer {
-                // Create a new alert
+        if a1.title(for: .normal) == currentPlayer && a2.title(for: .normal) == currentPlayer && a3.title(for: .normal) == currentPlayer {
              showAlertMessage()
-            }
+        }
         
-            // Check for vertical victory
+        if b1.title(for: .normal) == currentPlayer && b2.title(for: .normal) == currentPlayer && b3.title(for: .normal) == currentPlayer {
+            showAlertMessage()
+        }
+        
+        if c1.title(for: .normal) == currentPlayer && c2.title(for: .normal) == currentPlayer && c3.title(for: .normal) == currentPlayer {
+            showAlertMessage()
+        }
+        
+        // Check for vertical victory
         if a1.title(for: .normal) == currentPlayer && b1.title(for: .normal) == currentPlayer && c1.title(for: .normal) == currentPlayer {
-            // Create a new alert
+            showAlertMessage()
+        }  
+        
+        if a2.title(for: .normal) == currentPlayer && b2.title(for: .normal) == currentPlayer && c2.title(for: .normal) == currentPlayer {
+            showAlertMessage()
+        }  
+        
+        if a3.title(for: .normal) == currentPlayer && b3.title(for: .normal) == currentPlayer && c3.title(for: .normal) == currentPlayer {
+            showAlertMessage()
+        }
+        
+        // Check for diagonal victory
+        if a1.title(for: .normal) == currentPlayer && b2.title(for: .normal) == currentPlayer && c3.title(for: .normal) == currentPlayer {
+            showAlertMessage()
+        }
+        
+        if a3.title(for: .normal) == currentPlayer && b2.title(for: .normal) == currentPlayer && c1.title(for: .normal) == currentPlayer {
             showAlertMessage()
         }
         
@@ -69,5 +91,5 @@ class ViewController: UIViewController {
             let dialogMessage = UIAlertController(title: "Attention", message: "I am an alert message", preferredStyle: .actionSheet)
             self.present(dialogMessage, animated: true, completion: nil)
         }
-        }
+    }
 }
